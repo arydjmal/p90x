@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>P90X iCal Generator</title>
+    <meta charset="utf-8" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+    <style type="text/css">
+      body {
+        margin: 0 auto;
+        font-family: Helvetica;
+        font-size: 14px;
+      }
+      .main {
+        margin: 20px auto;
+        padding: 20px;
+        width: 300px;
+        background: #EEE;
+        border-radius: 3px;
+      }
+      h1 {
+        font-size: 24px;
+        text-align: center;
+        margin: 0 0 20px 0;
+      }
+      form {
+        margin: 0;
+      }
+      label {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 10px
+      }
+      #ui-datepicker-div {
+        background: #FFF;
+        border: 1px solid #CCC;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>P90X iCal Generator</h1>
+      <%= yield %>
+    </div>
+  </body>
+</html>
