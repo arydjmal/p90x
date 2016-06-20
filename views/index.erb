@@ -1,7 +1,7 @@
 <form action="/calendar.ics" method="get">
   <p>
     <label for="start_date">Start Date:</label>
-    <input name="start_date" id="datepicker" value="" />  
+    <input name="start_date" id="datepicker" value="" />
   </p>
   <p>
     <label for="program">Program:</label>
@@ -11,7 +11,7 @@
   </p>
   <p>
     <% settings.programs.each do |program, routines| %>
-      <div id="<%=program%>_routines" class="routines" style="display:none">
+      <div id="<%=program.to_s.gsub(' ', '-')%>_routines" class="routines" style="display:none">
         <label for="routine">Routines:</label>
         <% routines.keys.each do |routine| %>
           <br /><input type="radio" name="routine" value="<%= routine %>"> <%= routine %>
@@ -27,7 +27,7 @@
     $("#datepicker").datepicker({dateFormat: "yy-mm-dd"});
     $("input[name=program]").change(function() {
       $(".routines").hide();
-      $("#"+$(this).val()+"_routines").show();
+      $("#"+$(this).val().replace(/ /g, '-')+"_routines").show();
     });
     $('form').submit(function() {
       if($("[name=start_date]").val() == '' || !$("[name=program]:checked").val() || !$("[name=routine]:checked").val()) return false;
